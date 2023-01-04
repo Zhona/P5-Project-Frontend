@@ -1,19 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Profile({ user }) {
+function Profile({ user, setUser }) {
+  console.log(user, "from profile");
   const navigate = useNavigate();
 
-  console.log(user);
+
+  // console.log(user);
   return (
-    <div>
+    <div className="profile">
       <h1>Welcome {user.username}</h1>
-      <p>{user.bio}</p>
+      <p>{user.name}</p>
 
       <button
         onClick={() => {
           localStorage.removeItem("jwt");
-          navigate("/redirect");
+          navigate("/");
+          setUser("");
         }}
       >
         Logout

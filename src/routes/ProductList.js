@@ -1,20 +1,26 @@
 import ProductCard from './ProductCard'
 
-function ProductList ({products}) {
+function ProductList ({products, onDelete, handlePatch, user, setProducts, onUpdate}) {
 
-    console.log(products, "from ProductList")
-    // products.map((product) => (
-    //     <ProductCard key={product.id} product={product}/>
-    // ))
+    // console.log(products, "from ProductList")
 
+    function renderproduct (product) {
+        return(
+            <ProductCard key={product.id} product={product} onDelete={onDelete} products={products} handlePatch={handlePatch} user={user} setProducts={setProducts} onUpdate={onUpdate}/>
+        )
+    }
     let productCard 
     if (products ){
+    
         productCard = products.map((product)=> (
-        <ProductCard key={product.id} product={product}/>
+            renderproduct(product)
     ))}
+
+
+    
     return (
         <>
-            <ul className="cards">{productCard}</ul>
+            <div className="cards">{productCard}</div>
         </>
     )
 }
