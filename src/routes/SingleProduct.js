@@ -58,13 +58,22 @@ function SingleProduct({ setIsBag, addToCart }) {
           {/* <p>{currentProduct.description}</p> */}
           <hr></hr>
           <div className="details-container">
-            <p>These potions are produced with heavy blessing, magic, and intention. 
-            Blessed with the intention of filling your soul with the unconditional love & adventure.
-
-This tea is known to be heart expanding, soul enriching, and spiritually refreshing.
- The experience will leave you in awe and the adventure that you encounter that will fill your heart will be overflowing for a lifetime.</p>
+            <p>
+              These potions are produced with heavy blessing, magic, and
+              intention. Blessed with the intention of filling your soul with
+              the unconditional love & adventure. This tea is known to be heart
+              expanding, soul enriching, and spiritually refreshing. The
+              experience will leave you in awe and the adventure that you
+              encounter that will fill your heart will be overflowing for a
+              lifetime.
+            </p>
+            
           </div>
           <hr></hr>
+         
+          <h4>Instructions</h4>
+          <p>Drink the whole bottle, lay somewhere comfortable (preferably under a tree) and enjoy your adventure to Wonderland. </p>
+         
           <button
             className="add-to-cart-btn"
             onClick={() => addToCart(currentProduct)}

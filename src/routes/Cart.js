@@ -6,26 +6,19 @@ function Cart({ inCartProducts, setInCartProducts }) {
   };
   const cartitems = inCartProducts.map((product) => {
     return (
-      // <div className="cart-wrapper">
-      // <div className="in-cart-products">
-<>
-      <div className="cart-details-container">
-        <div className="cart-details">
-          <div className="cart-img-container">
-            <img src={product.image} alt="image" />
+      <>
+        <div className="cart-details-container">
+          <div className="cart-details">
+            <div className="cart-img-container">
+              <img src={product.image} alt="image" />
+            </div>
+            <p>{product.name}</p> <p>${product.price}</p>
           </div>
-          <p>{product.name}</p>
         </div>
-        <p>${product.price}</p>
-      </div>
-
-      
-</>
-
+      </>
     );
   });
-
-  
+const price = 50
   return (
     <div className="events">
       <main className="checkout">
@@ -129,37 +122,29 @@ function Cart({ inCartProducts, setInCartProducts }) {
             </button>
           </NavLink>{" "}
         </div>
-        {/* PRODUCTS */}
-          <div className="cart-wrapper">
-            <div className="in-cart-products">
-            {<div>{cartitems}</div>}
-            </div>
-            
-        </div>
         <hr></hr>
-{/* price
-
-<div className="cart-info">
-                    <p>Subtotal</p>
-                    <p>{}</p>
-                </div>
-
-                <div className="cart-info">
-                    <p>Shipping</p>
-                    <p>{}</p>
-                </div>
-
-                <div className="cart-info">
-                    <p>Estimated Taxes</p>
-                    <p>{}</p>
-                </div>
-
-                <hr></hr>
-
-                <div className="cart-total">
-                    <p>Total</p>
-                    <p className="cart-price">{}</p>
-                </div> */}
+        {/* PRODUCTS */}
+        <div className="cart-wrapper">
+          <div className="in-cart-products">{<div>{cartitems}</div>}</div>
+          <hr></hr>
+          {/* price */}
+          <div className="cart-info">
+            <p>Subtotal</p>
+            <p>${price}</p>
+          </div>
+          <div className="cart-info">
+            <p>Shipping</p>
+            <p>${price + 5}</p>
+          </div>
+          <div className="cart-info">
+            <p>Estimated Taxes</p>
+            <p>${price + 5 +3}</p>
+          </div>
+          <div className="cart-total">
+            <p>Total</p>
+            <p className="cart-price">{}</p>
+          </div>
+        </div>
       </main>
     </div>
   );

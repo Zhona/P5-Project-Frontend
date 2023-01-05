@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import mad from "../images/mad.png";
+// import mad from "./images/mad.png";
 
 function Home({ user }) {
   return (
@@ -23,7 +23,7 @@ function Home({ user }) {
           <div className="hours">
             <p>January</p>
           </div>
-          <img src="mad" alt="image"></img>
+          <img src="images/mad.png" alt="image" ></img>
         </div>
         <div className="main-footer">
           {/* <p>©2022</p> */}
@@ -72,7 +72,16 @@ function Home({ user }) {
         /> */}
           <div className="text-container">
             <div className="sub-head">Scenery</div>
-            <p></p>
+            <p>
+              Wonderland is an imaginary world of fantasy, mystery, and
+              adventure. It is a place filled with talking animals, peculiar
+              characters, and magical happenings. It is a world of imagination
+              and exploration, of wonder and surprises. It is a place of
+              enchantment, joy and laughter, of exploration and discovery. It is
+              a place of dreams and possibilities, of make-believe and
+              imagination, of fantasy and mystery. It is a place of impossible
+              things and wonders.
+            </p>
           </div>
         </div>
 
@@ -81,7 +90,7 @@ function Home({ user }) {
             <div className="sub-head">Take a trip to Wonderland</div>
             <div>
               <p>
-                These potions are produced with heavy blessing, magic, and
+                These psychedelic potions are produced with heavy blessing, magic, and
                 intention. Blessed with the intention of filling your soul with
                 the unconditional love & adventure. This tea is known to be
                 heart expanding, soul enriching, and spiritually refreshing. The

@@ -22,10 +22,11 @@
   a,
   link{
     text-decoration: none;
+    color: black
   }
   
   img{
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
   }
   
@@ -39,6 +40,7 @@
 
 
 /* HEADER */
+
 .header{
     position: fixed;
     width: 100%;
@@ -74,20 +76,27 @@
 }
 
 /* Products */
-.events{
+/* .events{
     width: 100%;
     padding-top: 150px;
     padding-bottom: 40px;
     padding-left: 50px;
     padding-right: 50px;
-  }
-.grid-container2{
+  } */
+/* .grid-container2{
     width: 100%;
     display: grid;
     column-gap: 60px;
     row-gap: 80px;
     grid-template-columns: 1fr 1fr 1fr
-  }
+  } */
+.plant-container {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
   .plant-container h1{
     font-family: var(--logo-font);
     font-weight: var(--regular);
@@ -102,7 +111,16 @@
   
   .plant-container img{
     margin-bottom: 10px;
-    height: 400px;
+    height: 300px;
+  }
+
+  .cards {
+    padding: 0 10vw;
+    margin-top: 225px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
   }
 
 /* ================= Checkout ================= */
@@ -123,6 +141,10 @@
     font-weight: var(--medium);
     font-size: 22px;
     margin-bottom: 20px;
+}
+
+.cart-wrapper {
+  width: 20%;
 }
 
 .checkout-form form input, 
@@ -158,6 +180,18 @@
     border: 1px solid #000;
     transition: .3s;
 }
+.checkout{
+  margin-top: 125px;
+  display: flex;
+  justify-content: center;
+  column-gap: 40px;
+}
+
+.cart-img-container img{
+  max-width: 100%;
+  height: 80px;
+}
+
 
 /* 
 
@@ -230,7 +264,7 @@
     position: fixed;
     width: 50%;
     padding-right: 280px;
-} */
+} 
 /* ================= Thank You ================= */
 
 .thankyou{
@@ -265,9 +299,11 @@
     opacity: 55%;
 }
 /* logo */
+
 .logo{
     font-family: 'Tangerine', cursive;
     font-size: 40px;
+    font-weight: bold;
     cursor: pointer;
     margin-right: 230px;
   }
@@ -327,9 +363,12 @@
   
   .main-container img{
     position: absolute;
-    width: 335px;
-    bottom: 0;
-    left: 39%;
+    width: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    opacity: 0.6;
   }
   
   .main-footer{
@@ -403,8 +442,7 @@
   }
   
   hr{
-    margin-top: 110px;
-    margin-bottom: 40px;
+    margin-top: 15%;
   }
   
   .intro-footer{
@@ -434,12 +472,34 @@
     padding-left: 50px;
     padding-right: 50px;
   }
+
+  .logout-btn {
+    width: 53%;
+    border-radius: 10px;
+    border: none;
+    background-color: whitesmoke;
+    height: 40px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+  
+  }
+   .profile h1{
+    font-family: 'Tangerine', cursive;
+    font-weight: var(--light);
+font-size: 100px;
+
+   }
 /* ================= Login ================= */
+.login-parent {
+  display: flex;
+  align-items: center;
+}
+
 .login{
     width: 50%;
     padding-top: 150px;
     padding-bottom: 40px;
-    padding-left: 50px;
+    padding-left: 165px;
     padding-right: 50px;
     position: center;
   }
@@ -453,7 +513,7 @@
     position: center;
   }
 
-  .login input, button{
+  /* .login input{
     width: 100%;
     height: 50px;
     padding-left: 15px;
@@ -462,15 +522,61 @@
     border: .5px solid #000;
     font-family: var(--main-font);
     margin-bottom: 30px;
+} */
+.input-field{
+  width: 330px;
+  height:55px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  /* margin: 10px; */
 }
 
-.login h1 {
-    font-family: var(--main-font);
-    font-weight: var(--medium);
-    font-size: 22px;
-    margin-bottom: 20px;
-} 
+.input-field input {
+  width: 100%;
+  height: 70%;
+  background-color: transparent;
+  border: none;
+  border-bottom:  0.7px solid black;
+  outline: none;
+  font-size: 1.3 rem;
+  text-indent: 2px;
 
+}
+
+.input-field input::placeholder {
+  color: black;
+  font-size: 1rem;
+}
+.ls-button {
+  width: 53%;
+  border-radius: 10px;
+  border: none;
+  background-color: whitesmoke;
+  height: 40px;
+  margin: 10px 0;
+  font-size: 1.2rem;
+
+}
+
+
+/* ================= Sign up  ================= */
+.form-group {
+  width: 330px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  height: 70%;
+  background-color: transparent;
+  border: none;
+  border-bottom:  0.7px solid black;
+  outline: none;
+  font-size: 1.3 rem;
+  text-indent: 2px;
+}
 
 /* ================= Single Product ================= */
 .single-product{
@@ -498,14 +604,11 @@
     padding-right: 140px;
 }
 
-.name-and-price{
+.name-and-price, h4{
     font-family: var(--logo-font);
-
-    /* font-family: var(--main-font); */
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 75px;
+    align-items: flex-start;
 }
 
 .single-product-name{
@@ -517,12 +620,12 @@
     font-weight: var(--regular);
 }
 
-.description{
+.description, p{
     font-family: var(--main-font);
     font-weight: var(--light);
     font-size: 13px;
     line-height: 17px;
-    margin-bottom: 75px;
+    margin-bottom: 5px;
 }
 
 .details-container{
@@ -558,4 +661,30 @@
 
 .sing-product-info hr{
     margin-bottom: 10px;
+}
+
+/* Product Form */
+.postForm {
+  margin-top: 125px;
+}
+
+.postForm button {
+  width: 25%;
+}
+
+.postForm p {
+  font-size: 30px;
+}
+
+/* Profile */
+
+.logout-btn {
+  width: 28%;
+  height: 30px;
+  padding-left: 15px;
+  outline: none;
+  background-color: #fffff9;
+  border: 0.5px solid #000;
+  font-family: var(--main-font);
+  margin-bottom: 30px;
 }

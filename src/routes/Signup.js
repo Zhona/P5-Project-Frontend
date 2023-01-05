@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+
 
 function Signup({ user, setUser, setIsSignedIn }) {
   const [firstName, setFirstName] = useState("");
@@ -57,6 +59,7 @@ function Signup({ user, setUser, setIsSignedIn }) {
   }
 
   return (
+    <div className="login-parent">
     <div className="login">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -66,6 +69,7 @@ function Signup({ user, setUser, setIsSignedIn }) {
             placeholder="email"
             onChange={handleEmail}
           />
+          </div>
           <div className="form-group">
             <input
               className="form-control"
@@ -98,12 +102,21 @@ function Signup({ user, setUser, setIsSignedIn }) {
               placeholder="First Name"
               onChange={handleFirstname}
             />
-          </div>
         </div>
       </form>
       <button className="btn btn-primary" onClick={handleSubmit}>
         Sign Up
       </button>
+    </div>
+    <div className="login-img">
+        <motion.img
+          className="welcome"
+          initial={{ y: 15, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1, transition: { duration: 1.5 } }}
+          src="images/mushroom.png"
+          alt="image"
+        />
+      </div>
     </div>
   );
 }

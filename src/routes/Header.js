@@ -5,11 +5,11 @@ function Header({ user }) {
   return (
     <header className="header">
       <nav className="header-nav">
-      <div className='logo'><NavLink to="/" exact="true">Wonder Potions</NavLink></div>
+      <div className='logo'><NavLink to="/" exact="true">High Tea</NavLink></div>
         
-        <ul>
+        <ul className="navLink_routes">
           <li>
-            {" "}
+           
             <NavLink to="/">Home</NavLink>
           </li>
           <li>

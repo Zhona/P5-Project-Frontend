@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-
 import { NavLink, useNavigate } from "react-router-dom";
 
 function Login({ setUser }) {
@@ -37,40 +36,43 @@ function Login({ setUser }) {
   };
 
   return (
-    <div>
+    <div className="login-parent">
       <div className="login">
-        <h1>LOGIN</h1>
+        {/* <h1>LOGIN</h1> */}
         <form onSubmit={handleSubmit}>
-  
-          <input
-            type="text"
-            value={username}
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          <input type={"submit"} value="login"></input>
+          <div className="input-field">
+            <input
+              type="text"
+              value={username}
+              placeholder="Username"
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+          </div>
+          <div className="input-field">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+          </div>
+          <button className="ls-button" type={"submit"} value="login">
+            Login
+          </button>
         </form>
         {/* <NavLink to="/thankyou"><button className="pay-btn">PAY NOW</button></NavLink> */}
         <NavLink to="/Signup">
-     
-          
-          <button>Signup</button>
+          <a>Don't have an account?</a>
         </NavLink>
       </div>
       <div className="login-img">
-      <motion.img
-            className="welcome"
-            initial={{ y: 15, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1, transition: { duration: 1.5 } }}
-            src="https://s3.amazonaws.com/media.thecrimson.com/photos/2010/03/09/002059_1229422.jpg"
-            alt="image"
-          />
+        <motion.img
+          className="welcome"
+          initial={{ y: 15, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1, transition: { duration: 1.5 } }}
+          src="images/mad-hatter-mushroom.png"
+          alt="image"
+        />
       </div>
     </div>
   );

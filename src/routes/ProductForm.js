@@ -38,52 +38,58 @@ function ProductForm({ products, setProduct, user }) {
   return (
     <div className="events">
       {user?.is_admin ===true? 
-      <div className="Form">
+      <div className="postForm">
         <p>New Product</p>
         <form onSubmit={handleSubmit}>
+          <div className="input-field">
           <input
             onChange={handleChange}
             type="text"
             name="name"
             value={products.name}
             placeholder="Product name"
-          />
+          /></div>
+          <div className="input-field">
           <input
             onChange={handleChange}
             type="text"
             name="image"
             value={products.image}
             placeholder="Image URL"
-          />
+          /></div>
+          <div className="input-field">
           <input
             onChange={handleChange}
             type="text"
             name="description"
             value={products.description}
             placeholder="Description"
-          />
+          /></div>
+          <div className="input-field">
           <input
             onChange={handleChange}
             type="text"
             name="color"
             value={products.color}
             placeholder="Color"
-          />
+          /></div>
+          <div className="input-field">
           <input
             onChange={handleChange}
             type="number"
             name="price"
             value={products.price}
             placeholder="Price"
-          />
+          /></div>
+          <div className="input-field">
           <input
             onChange={handleChange}
             type="number"
             name="category_id"
             value={products.category_id}
             placeholder="Category ID"
-          />
-          <div className="flex-column">
+          /></div>
+          {/* <div className="flex-column"> */}
             {/* <select>
               <option value="Color">Color</option>
               <option value="color">Brown</option>
@@ -95,8 +101,8 @@ function ProductForm({ products, setProduct, user }) {
               <option value={products.category_id}>Vinyl Figure</option>
               <option value={products.category_id}>Art Print</option>
             </select> */}
-          </div>
-          <button type="submit">Add Product</button>
+          {/* </div> */}
+          <button className="ls-button" type="submit">Add Product</button>
         </form>
       </div>
       : <></>}
